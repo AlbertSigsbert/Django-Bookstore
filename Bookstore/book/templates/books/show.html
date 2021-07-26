@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Django Sandbox</title>
+</head>
+
+<body>
+   <div class="container mx-auto">
+    <h1 class="text-center text-4xl py-5">{{book.title}}</h1>
+      <div class="grid grid-cols-4">
+        <div class="grid-item">
+            <img src="{{ book.thumbnailUrl }}" alt="" class="w-56">
+        </div>
+        <div class="grid-item col-span-3">
+          
+              <h3 class="text-3xl font-semibold">About</h3>
+              <p class="my-5">{{book.shortDescription}}</p>
+              <h3 class="text-3xl font-semibold">Pages</h3>
+              <p class="my-5">Total {{book.pageCount}} pages</p>
+              <h3 class="text-3xl font-semibold">Author</h3>
+              <p class="my-5">{{book.authors | join:", "}}</p>
+              <h3 class="text-3xl font-semibold" >Description</h3>       
+              <p class="my-5">{{book.longDescription}}</p>
+        </div>
+      </div>
+        
+      
+       
+   </div>  
+</body>
+</html>
